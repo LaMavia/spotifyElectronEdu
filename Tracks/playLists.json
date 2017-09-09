@@ -1,0 +1,9 @@
+[
+    {
+        "rap": [
+            {"name": "Sauce It Up", "file": "SauceItUp.mp3"},
+            {"name": "First Day Out", "file": "FirstDayOut.mp3"},
+            {"name": "Bodak Yellow", "file": "BodakYellow.mp3"}
+        ]
+    }
+]

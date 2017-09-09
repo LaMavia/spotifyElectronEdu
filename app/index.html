@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="./app/css/fontello.css">
+    <link rel="stylesheet" href="./app/player.min.css">
+    <link rel="stylesheet" href="./app/buttons.min.css">
+    <link rel="stylesheet" href="./app/browse.min.css">
+    <link rel="stylesheet" href="./app/main.min.css">
+
+    <script src="./app/vue.js"></script>
+</head>
+<body>
+<aside class="left__panel">
+    <button class="change-section change-section-active">browse</button>
+    <button class="change-section">radio</button>
+    
+    <ol class="sections">
+        <span class="title">your library</span>
+        <li class="section">
+            <button class="change-section">your daily mix</button>
+        </li>
+        <li class="section">
+            <button class="change-section">songs</button>
+        </li>
+        <li class="section">
+            <button class="change-section">artists</button>
+        </li>
+        <li class="section">
+            <button class="change-section">local files</button>
+        </li>
+    </ol>
+</aside>
+<main class="main">
+    <section class="header">browse</section>
+    <section class="playlists">
+            <div class="playlist" v-for="pList in playlists">
+                <div :style="pList.img" :alt="pList.description"class="img"></div>
+                <span class="title">{{ pList.name }}</span>
+                <div class="overlay">
+                    <button @click="changeList(pList.)" class="play icon-play"></button>
+                </div>
+            </div>
+    </section>
+</main>
+<aside class="right__panel">
+    Right
+</aside>
+<section class="play">
+    <audio controls="controls" class="player">
+        <source :src="track" type="mp3">
+    </audio>
+</section>
+<script src="./app/client.js"></script>
+</body>
+</html>

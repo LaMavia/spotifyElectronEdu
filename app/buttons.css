@@ -1,0 +1,52 @@
+:root {
+  --h: 1.5rem;
+}
+
+.change-section {
+  --h: 1.5rem;
+  width: 100%;
+  height: var(--h);
+  font-size: .9rem;
+  line-height: var(--h);
+  border: none;
+  color: #8f8f8f;
+  text-transform: capitalize;
+  text-align: left;
+  background-color: transparent;
+  margin: .75vh 0;
+  padding-left: 10%;
+  transition: color .3s 0s;
+  outline: none;
+}
+
+.change-section:hover {
+  color: #fff;
+  transition: color .3s 0s;
+}
+
+.change-section:focus {
+  color: #fff;
+  transition: color .3s 0s;
+}
+
+.change-section:focus::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 5px;
+  height: var(--h);
+  background-color: #6AE368;
+}
+
+.change-section-active {
+  color: #fff;
+}
+
+.change-section-active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 5px;
+  height: var(--h);
+  background-color: #6AE368;
+}

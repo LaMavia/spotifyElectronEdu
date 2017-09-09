@@ -1,0 +1,126 @@
+@font-face{
+    font-family: 'mainFont';
+    src:  url('./fonts/Montserrat-Regular.ttf') format('truetype');
+}
+@font-face{
+    font-family: 'mainFont-light';
+    src:  url('./fonts/Montserrat-ExtraLight.ttf') format('truetype');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    //border: 1px dashed #fff;//DEV
+    color: #fff//DEV
+}
+:root{
+    --leftPanelWidth: 17.5vh;
+    --rightPanelWidth: 25vh;
+    --panelColor: rgb(23,23,23);
+}
+body{
+    background-color: #1b1b1b;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template: 90vh 10vh / calc(var(--leftPanelWidth)) 1fr calc(var(--rightPanelWidth));
+    grid-template-areas: 
+        "leftPanel main rightPanel"
+        "play play play"
+    ;
+    font-family: 'mainFont', sans-serif;
+}
+.left__panel{
+    grid-area: leftPanel;
+    display: flex;
+    flex-flow: column wrap;
+    height: auto;
+    width: var(--leftPanelWidth) !important;
+    background-color: var(--panelColor);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    &::-webkit-scrollbar{
+        width: 7%;
+        background-color: rgb(26,26,26);
+    }
+    &::-webkit-scrollbar-thumb{
+        width: 100%;
+        background-color: rgb(40,40,40);
+    }
+
+    ol, .sections{
+        list-style: none;
+        width: 100%;
+        height: auto;
+        margin-top: 5vh;
+        
+        .title{
+            width: 100%;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #8f8f8f;
+            font-size: .8rem;
+            padding-left: 6%; 
+            font-family: 'mainFont-light', sans-serif;
+        }
+
+        .section{
+            *{
+                --h: 1.3rem;
+                height: 1.3rem;
+                line-height: 1.3rem;
+                font-weight: 600;
+            }
+        }
+    } 
+}
+.right__panel{
+    grid-area: rightPanel;
+    display: flex;
+    flex-flow: column wrap;
+    background-color: var(--panelColor);
+}
+.main{
+    grid-area: main;
+    display: flex;
+    flex-flow: column wrap;
+    background-color: #1d1d1d;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    &::-webkit-scrollbar{
+        background-color: rgb(26,26,26);
+    }
+    &::-webkit-scrollbar-track{
+        background-color: rgb(26,26,26);
+    }
+    
+    .header{
+        width: 99%;
+        height: 30vh;
+        margin: 1vh auto 0 auto;
+        text-align: center;
+        line-height: 32vh;
+        color: #fff;
+        font-size: 6rem;
+        font-weight: 800;
+        background: url('./assets/section-bg.jpeg') center center no-repeat;
+        background-size: cover;
+        text-shadow: 2px 2px #1b1b1b;
+    }
+    .playlists{
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-flow: row wrap;
+    }
+}
+.play{
+    grid-area: play;
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: rgb(37,37,37);
+}
